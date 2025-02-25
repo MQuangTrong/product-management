@@ -1,4 +1,90 @@
 extends ../../layouts/default.pug
-
+include ../../mixins/box-head.pug
+include ../../mixins/product-layout.pug
 block main
-  h1 Trang chủ
+  .main 
+    .section-products-featured.my-5 
+    .container.my-3 
+      .row 
+        .col-12 
+          img(src="./images/slide.png" width="100%" alt="slide")
+
+    .section-products-featured.my-5 
+      .container.my-3 
+        .row 
+          .col-3
+            .card.mb-3 
+              .card-header Lọc theo giá
+              .card-body 
+                  .row 
+                      .col-12
+                        input(type="checkbox" name="pricefilter" id="pricefilter") 
+                        label(for="pricefilter") Dưới 5$
+                      .col-12
+                        input(type="checkbox" name="pricefilter" id="pricefilter" ) 
+                        label(for="pricefilter") Từ 5 đến 10$
+                      .col-12
+                        input(type="checkbox" name="pricefilter" id="pricefilter" ) 
+                        label(for="pricefilter") Từ 10 đến 20$
+                      .col-12
+                        input(type="checkbox" name="pricefilter" id="pricefilter" ) 
+                        label(for="pricefilter") Từ 20 đến 30$
+                      .col-12
+                        input(type="checkbox" name="pricefilter" id="pricefilter" ) 
+                        label(for="pricefilter") Từ 30 đến 50$
+                      .col-12
+                        input(type="checkbox" name="pricefilter" id="pricefilter" )
+                        label(for="pricefilter") Trên 50$
+                         
+                
+                  
+          .col-9
+            .card.mb-3 
+              .card-header
+                .row   
+                  .col-12 
+                    +box-head("Sản phẩm nổi bật")
+              .card-body
+                +product-grid(productsFeatured)
+
+            .card.mb-3 
+              .card-header
+                .row 
+                  .col-12 
+                    +box-head("Sản phẩm mới")
+              .card-body
+                +product-grid(productsNew)
+
+    //- .section-products-featured.my-5 
+    //-   .container.my-3 
+    //-     .row 
+    //-       .col-12 
+    //-         +box-head("Sản phẩm mới")
+
+    //-     +product-grid(productsNew)
+
+    .section-products-featured.my-5 
+      .container.my-3 
+        .card.mb-3
+          .row.p-3
+            .col-9 
+              img(src="./images/contact.png" width="100%" alt="contact")
+            .col-3
+              div
+                h5(style="color: red") CẦN HỖ TRỢ
+                div
+                  <span> <b> Điện thoại: </b> </span>
+                  a(href="tel: 0359206687") 035920687
+                div
+                  <span> <b> Zalo: </b> </span>
+                  a(href="#") 035920687
+              div.mt-3
+                h5(style="color: red") PHẢN ÁNH/KHIẾU NẠI
+                div
+                  <span> <b> Điện thoại: </b> </span>
+                  a(href="tel: 0359206687") 035920687
+                div
+                  <span> <b> Zalo: </b> </span>
+                  a(href="#") 035920687
+
+

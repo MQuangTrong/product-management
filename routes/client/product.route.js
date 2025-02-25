@@ -6,8 +6,10 @@ const controller = require("../../controllers/client/product.controller")
 //Trang chủ
 router.get('/', controller.index);
 
+router.get("/:slugCategory", controller.category)
+
 //Detail
-router.get('/:slug', controller.detail)
+router.get('/detail/:slugProduct', controller.detail)
 
 module.exports = router
 

@@ -2,6 +2,12 @@
 .header {
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
+    background: #49c1db;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 999;
 }
 
 .header .inner-menu img {
@@ -23,7 +29,22 @@
     margin-left: 20px;
 }
 
+.header .inner-menu>ul>li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.header .inner-menu>ul>li a:hover {
+    color: #f1cbcb;
+}
+
 /* End Header */
+
+.main {
+    margin-top: 160px;
+}
 
 /*Footer */
 .footer {
@@ -32,6 +53,7 @@
     text-align: center;
     padding: 8px;
 }
+
 /* End footer */
 
 /* box-head */
@@ -39,12 +61,13 @@
     margin-bottom: 30px;
 }
 
-.box-head .inner-title  {
+.box-head .inner-title {
     margin-bottom: 0;
     font-size: 28px;
     font-weight: 600;
     color: green;
 }
+
 /* End box-head */
 
 /* product-item */
@@ -52,12 +75,14 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
+    height: 100%;
 }
 
 .product-item .inner-image {
     width: 100%;
     aspect-ratio: 4/3;
-    border-bottom: 1px solid  #ddd ;
+    border-bottom: 1px solid #ddd;
+    position: relative;
 }
 
 .product-item .inner-image img {
@@ -66,23 +91,35 @@
     object-fit: cover;
 }
 
+.product-item .inner-featured {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: green;
+    color: #fff;
+    padding: 3px 6px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
 .product-item .inner-content {
     padding: 15px;
 }
 
-.product-item .inner-content .inner-title  {
+.product-item .inner-content .inner-title {
     font-size: 20px;
     font-weight: 600;
 }
 
-.product-item .inner-content  .inner-price-new {
+.product-item .inner-content .inner-price-new {
     font-size: 18px;
     font-weight: 600;
     color: green;
 }
 
 
-.product-item .inner-content  .inner-price-old {
+.product-item .inner-content .inner-price-old {
     font-size: 18px;
     font-weight: 600;
     color: red;
@@ -99,4 +136,139 @@
     padding: 3px 10px;
     border-radius: 8px;
 }
+
 /* End product-item */
+
+/* sub-menu */
+.sub-menu {
+    position: relative;
+    z-index: 999;
+}
+
+.sub-menu ul {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #a6d6e9;
+    min-width: 180px;
+    display: none;
+}
+
+.sub-menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sub-menu:hover>ul {
+    display: block;
+}
+
+.sub-menu ul li {
+    position: relative;
+}
+
+.sub-menu ul li ul {
+    right: 100%;
+    top: 0;
+}
+
+.sub-menu ul li:hover>ul {
+    display: block;
+}
+
+/* End sub-menu */
+
+/* product-detail */
+.product-detail .inner-thumb img {
+    width: 100%;
+    height: auto;
+}
+
+.product-detail.inner-title {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.product-detail .innẻ-category {
+    margin-bottom: 10px;
+}
+
+.product-detail .inner-price-new {
+    color: green;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-detail .inner-price-old {
+    color: red;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-decoration: line-through;
+}
+
+.product-detail .inner-percent span {
+    background: red;
+    color: #fff;
+    padding: 4px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.product-detail .inner-stock {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.product-detail .inner-stock span {
+    background: green;
+    color: #fff;
+    padding: 4px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* End product-detail */
+
+/*Show alert*/
+[show-alert] {
+    position: fixed;
+    top: 70px;
+    right: 15px;
+    z-index: 9999;
+}
+
+[show-alert].alert-hidden {
+    animation-name: alert-hidden;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes alert-hidden {
+    from {
+        right: 15px;
+    }
+
+    to {
+        right: -100%;
+        display: none;
+    }
+}
+
+[show-alert] [close-alert] {
+    background: #ffffffc4;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/*Show alert*/

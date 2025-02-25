@@ -1,7 +1,22 @@
-header.header 
+header.header(style='padding: 10px 0')
     .container-fluid 
         .row.align-items-center 
             .col-3 
                 .inner-logo 
                     a(href="/admin/dashboard") ADMIN 
-        .col-9        
+                    
+            .col-9     
+                div(class="text-right")
+                    img(
+                        class="avatar mr-2"
+                        src= user.avatar alt="Avatar"
+                    )
+                    a(
+                        href=`${prefixAdmin}/my-account`
+                        class="btn btn-primary btn-sm mr-2"
+                    ) #{user.fullName}
+                    
+                    a(
+                        href=`${prefixAdmin}/auth/logout`
+                        class="btn btn-danger btn-sm"
+                    ) Đăng xuất
